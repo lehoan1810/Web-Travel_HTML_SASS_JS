@@ -9,6 +9,10 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+		/>
 		<link rel="stylesheet" href="./css/app.css" />
 	</head>
 	<body>
@@ -32,5 +36,79 @@
 				<div id="search-btn" class="fas fa-search"></div>
 			</div>
 		</header>
+
+		<div class="search-form">
+			<div id="close-search" class="fas fa-times"></div>
+			<form action="">
+				<input
+					type="search"
+					name=""
+					placeholder="search here"
+					id="search-box"
+				/>
+				<label for="search-box" class="fas fa-search"></label>
+			</form>
+		</div>
+
+		<section class="home" id="home">
+			<div class="swiper home-slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div
+							class="box"
+							style="background: url(./images/home-bg-1.jpg) no-repeat"
+						>
+							<div class="content">
+								<span>never stop</span>
+								<h3>exploring</h3>
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Quasi incidunt voluptatibus sunt temporibus ad fugit quidem.
+									A!
+								</p>
+								<a href="#" class="btn">get started</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="swiper-slide">
+						<div
+							class="box second"
+							style="background: url(./images/home-bg-2.jpg) no-repeat"
+						>
+							<div class="content">
+								<span>make tour</span>
+								<h3>amazing</h3>
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Quasi incidunt voluptatibus sunt temporibus ad fugit quidem.
+								</p>
+								<a href="#" class="btn">get started</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div
+							class="box"
+							style="background: url(./images/home-bg-3.jpg) no-repeat"
+						>
+							<div class="content">
+								<span>make tour</span>
+								<h3>amazing</h3>
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+									Quasi incidunt voluptatibus sunt temporibus ad fugit quidem.
+								</p>
+								<a href="#" class="btn">get started</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+		</section>
 	</body>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="./JavaScript/script.js"></script>
 </html>

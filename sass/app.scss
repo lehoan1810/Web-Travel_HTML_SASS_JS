@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
 
+// import
 @import "./variable";
 @import "./mixins";
+
+// code
 * {
 	font-family: "Poppins", sans-serif;
 	margin: 0;
@@ -26,6 +29,23 @@ html {
 	}
 	&::-webkit-scrollbar-thumb {
 		background: $black;
+	}
+}
+section {
+	padding: 5rem 9%;
+}
+.btn {
+	margin-top: 1rem;
+	color: $black;
+	background: none;
+	font-size: 1.7rem;
+	padding: 1rem 3rem;
+	cursor: pointer;
+	border: $border;
+	display: inline-block;
+	&:hover {
+		background: $black;
+		color: $white;
 	}
 }
 .header {
@@ -75,15 +95,133 @@ html {
 		display: none;
 	}
 }
+.search-form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 102;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateX(-110%);
 
+	&.active {
+		transform: translateX(0%);
+	}
+
+	#close-search {
+		position: absolute;
+		top: 2rem;
+		font-size: 6rem;
+		color: white;
+		right: 2.5rem;
+		cursor: pointer;
+		&:hover {
+			color: $green;
+		}
+	}
+	form {
+		width: 70rem;
+		margin: 0 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 0.2rem solid $white;
+		display: flex;
+		align-items: center;
+		input {
+			width: 100%;
+			font-size: 1.7rem;
+			color: $white;
+			text-transform: none;
+			background: none;
+			padding-right: 2rem;
+			&::placeholder {
+				color: #aaa;
+			}
+		}
+		label {
+			font-size: 3rem;
+			cursor: pointer;
+			color: $white;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+}
+.home {
+	padding: 0;
+	.box {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		background-size: cover !important;
+		background-position: center !important;
+		justify-content: flex-end;
+		padding: 2rem 9%;
+		.content {
+			width: 50rem;
+			span {
+				font-size: 4rem;
+				color: $black;
+			}
+			h3 {
+				font-size: 6rem;
+				color: $green;
+				padding-top: 5rem;
+				text-transform: uppercase;
+			}
+			p {
+				line-height: 2;
+				color: $black;
+				font-size: 1.5rem;
+				padding: 1rem 0;
+			}
+		}
+	}
+	.second {
+		justify-content: flex-start;
+	}
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	font-size: 3rem;
+	color: $black;
+}
+
+// responesive
 @media (max-width: 1200px) {
 	.header {
 		padding: 2rem;
 	}
+	section {
+		padding: 3rem 2rem;
+	}
 }
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
 	html {
 		font-size: 55%;
+	}
+	.home .box {
+		padding: 2rem;
+		justify-content: center;
+		background-position: right !important;
+		&.second {
+			justify-content: center;
+			background-position: left !important;
+		}
+		.content {
+			text-align: center;
+			span {
+				font-size: 3rem;
+			}
+			h3 {
+				font-size: 4rem;
+			}
+		}
 	}
 }
 @media (max-width: 768px) {
@@ -94,16 +232,19 @@ html {
 		.navbar {
 			position: fixed;
 			top: 0;
-			left: 0;
+			left: -110%;
 			z-index: 101;
 			background-color: $white;
-			box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
 			width: 35rem;
 			height: 100%;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			align-items: center;
+			&.active {
+				left: 0;
+				box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+			}
 			a {
 				font-size: 3rem;
 				margin: 1rem 0;
@@ -112,9 +253,13 @@ html {
 				display: block;
 				position: absolute;
 				top: 1rem;
-				right: 1.5rem;
+				right: 2rem;
 			}
 		}
+	}
+	.swiper-button-next::after,
+	.swiper-button-prev::after {
+		display: none;
 	}
 }
 @media (max-width: 450px) {
