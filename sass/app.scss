@@ -48,6 +48,12 @@ section {
 		color: $white;
 	}
 }
+.heading {
+	text-align: center;
+	margin-bottom: 2.5rem;
+	font-size: 4rem;
+	color: $black;
+}
 .header {
 	position: fixed;
 	top: 0;
@@ -57,6 +63,10 @@ section {
 	display: flex;
 	align-items: center;
 	padding: 2rem 9%;
+	&.active {
+		background-color: $white;
+		box-shadow: $box-shadow;
+	}
 	.logo {
 		margin-right: auto;
 		font-size: 2.5rem;
@@ -192,6 +202,61 @@ section {
 	color: $black;
 }
 
+.category {
+	.box-container {
+		@include grid(29rem);
+		.box {
+			text-align: center;
+			padding: 2rem;
+			img {
+				height: 30rem;
+				width: 30rem;
+				border-radius: 50%;
+				margin-bottom: 1rem;
+			}
+			h3 {
+				font-size: 2rem;
+				color: $green;
+			}
+			p {
+				font-size: 1.5rem;
+				color: $black;
+				padding: 1rem 0;
+				line-height: 2;
+			}
+		}
+	}
+}
+
+.about {
+	background: $light-bg;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+	.image {
+		flex: 1 1 42rem;
+		padding: 0 5rem 5rem 0;
+		img {
+			width: 100%;
+			box-shadow: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+		}
+	}
+	.content {
+		flex: 1;
+		h3 {
+			font-size: 3rem;
+			color: $green;
+		}
+		p {
+			font-size: 1.5rem;
+			color: $black;
+			padding: 1rem 0;
+			line-height: 2;
+		}
+	}
+}
+
 // responesive
 @media (max-width: 1200px) {
 	.header {
@@ -204,6 +269,7 @@ section {
 @media (max-width: 991px) {
 	html {
 		font-size: 55%;
+		scroll-padding-top: 7rem;
 	}
 	.home .box {
 		padding: 2rem;
